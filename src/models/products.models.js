@@ -51,7 +51,7 @@ export function agregarProducto(producto) {
         new Promise(async (res, rej) => {
             try {
                 const docRef = await addDoc(collection(db, "products"), producto);
-                console.log("Doc ID:", docRef.id, "Producto: ", /*docRef.data()*/)
+                console.log("Doc ID:", docRef.id, "Producto: ", docRef)
                 res({ ...producto, id: docRef.id })
             } catch (error) {
                 console.log(error)
