@@ -8,7 +8,7 @@ const firebaseConfig = {
     authDomain: process.env.FIREBASE_AUTH_DOMAIN,
     projectId: "pfi-backnode",
     storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: "269354369414",
+    messagingSenderId: "24459820329",
     appId: process.env.FIREBASE_APP_ID
 };
 
