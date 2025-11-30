@@ -46,7 +46,7 @@ export const getAllProducts = async (req, res) => {
         console.log(products)
         res.status(200).json(products);
     } catch (error) {
-        res.status(500).json(error)
+        res.status(500).send()
     }
 };
 
@@ -64,7 +64,7 @@ export const getProductsById = async (req, res) => {
             res.status(400).json(error)
         }
     } catch (error) {
-        res.status(500).json(error)
+        res.status(500).send()
     }
 };
 
