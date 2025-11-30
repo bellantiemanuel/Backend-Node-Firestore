@@ -1,68 +1,71 @@
 import {agregarProducto, eliminarProducto, obtenerProducto, obtenerProductos} from "../models/products.models.js";
 
 export const addProductService = async (product) => {
-    return (
-        new Promise(async (res, rej) => {
-            try {
-                const newProduct = await agregarProducto(product)
-                res(newProduct)
-            } catch (error) {
-                rej(error)
-            }
-        })
-    )
+  return(
+    new Promise(async (res, rej) => {
+      try{
+        const newProduct = await agregarProducto(product)
+        res(newProduct)
+      }catch(error){
+        rej(error)
+      }
+    })
+  )
+
 }
 
 export const deleteProductService = async (id) => {
-    return (
-        new Promise(async (res, rej) => {
-            try {
-                await eliminarProducto(id)
-                res()
-            } catch (error) {
-                rej(error)
-            }
-        })
-    )
+  console.log(id)
+  return(
+    new Promise(async (res, rej) => {
+      try{
+        await eliminarProducto(id)
+        console.log("despues de eliminar el producto")
+        res()
+      }catch(error){
+        rej(error)
+      }
+    })
+  )
 }
 
+/*
 export const editProductService = async (id, product) => {
-    return (
-        new Promise(async (res, rej) => {
-            try {
-                const newProduct = await actualizarProducto(id, product)
-                res(newProduct)
-            } catch (error) {
-                rej(error)
-            }
-        })
-    )
-}
+  return(
+    new Promise(async (res, rej) => {
+      try{
+        const newProduct = await actualizarProducto(id, product)
+        res(newProduct)
+      }catch(error){
+        rej(error)
+      }
+    })
+  )
+}*/
 
 export const getAllProductsService = async () => {
-    return (
-        new Promise(async (res, rej) => {
-            console.log("Test dentro de Servicio")
-            try {
-                const productos = await obtenerProductos()
-                res(productos)
-            } catch (error) {
-                rej()
-            }
-        })
-    )
+  return(
+    new Promise(async (res,rej)=> {
+      console.log("test2 dentro de servicio")
+      try{
+        const productos = await obtenerProductos()
+        res(productos);
+      }catch(error){
+        rej()
+      }
+    })
+  )
 };
 
-export const getProductsByIdService = async (id) => {
-    return (
-        new Promise(async (res, rej) => {
-            try {
-                const product = await obtenerProducto(id)
-                res(product)
-            } catch (error) {
-                rej(error)
-            }
-        })
-    )
+export const getProductByIdService = async (id) => {
+  return(
+    new Promise(async(res, rej) => {
+      try{
+        const product = await obtenerProducto(id)
+        res(product)
+      }catch(error){
+        rej(error)
+      }
+    })
+  )
 };
-
