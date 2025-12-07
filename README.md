@@ -1,4 +1,4 @@
-# 🔥 Backend NodeJS Firestore
+# 🔥 Backend Node Firestore
 
 ## 📋 Descripción del Proyecto
 **Trabajo Práctico Integrador**  
